@@ -14,6 +14,11 @@
     <name>spring-cloud-zookeeper</name>
     <description>spring-cloud-zookeeper</description>
     <packaging>pom</packaging>
+    <modules>
+        <module>mall-common</module>
+        <module>mall-order</module>
+        <module>mall-user</module>
+    </modules>
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
