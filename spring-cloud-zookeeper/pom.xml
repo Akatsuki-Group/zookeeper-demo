@@ -5,24 +5,18 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.6</version>
+        <version>2.3.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.tuling</groupId>
-    <artifactId>zookeeper</artifactId>
+    <artifactId>spring-cloud-zookeeper</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>vip_zookeeper</name>
-    <description>vip_zookeeper</description>
+    <name>spring-cloud-zookeeper</name>
+    <description>spring-cloud-zookeeper</description>
     <packaging>pom</packaging>
-
-    <modules>
-        <module>zk_demo</module>
-        <module>zk-lock</module>
-        <module>spring-cloud-zookeeper</module>
-    </modules>
-
     <properties>
         <java.version>1.8</java.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
     </properties>
     <dependencies>
         <dependency>
@@ -37,13 +31,21 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
 
 </project>
